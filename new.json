@@ -15,7 +15,7 @@
     {
       "activity": "Nge-gym",
       "keterangan": "di Celfit",
-      "status": true,
+      "status": false,
       "id": 15
     },
     {
@@ -27,7 +27,7 @@
     {
       "activity": "Survey",
       "keterangan": "co-working space di jogja",
-      "status": false,
+      "status": true,
       "id": 23
     }
   ]

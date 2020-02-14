@@ -14,7 +14,10 @@ namespace Rest
         typeof(GetList),
         typeof(PostTodo),
         typeof(Update),
-        typeof(Delete)
+        typeof(Delete),
+        typeof(Clear),
+        typeof(Done),
+        typeof(UnDone)
     )]
 
     class Program
@@ -96,5 +99,62 @@ namespace Rest
                 var result = await client.DeleteAsync($"http://localhost:3000/todo/{idTodo}");
             }
         }
+
+        [Command(Description = "Clear all todo list", Name = "clear")]
+        class Clear
+        {
+            public async Task OnExecuteAsync()
+            {
+                var quest = Prompt.GetYesNo("Are you sure want to delete?", false, ConsoleColor.Blue);
+                var client = new HttpClient();
+
+                if (quest)
+                {
+                    var list = await client.GetStringAsync("http://localhost:3000/todo");
+                    var js = JsonConvert.DeserializeObject<List<Todo>>(list);
+                    var id = new List<int>();
+
+                    foreach(var x in js)
+                    {
+                        id.Add(x.id);
+                    }
+                    foreach (var y in id)
+                    {
+                         var result = await client.DeleteAsync($"http://localhost:3000/todo/{y}");
+                    }
+                } 
+            }
+        }
+
+        [Command(Description="Set a todo item to completed", Name = "done")]
+        class Done
+        {
+            [Argument(0)]
+            public string idTodo { get; set; }
+
+            public async Task OnExecuteAsync()
+            {
+                var req = new {id = Convert.ToInt32(idTodo), status = true};
+                var client = new HttpClient();
+                var todo = new StringContent(JsonConvert.SerializeObject(req), Encoding.UTF8, "application/json");
+                var result = await client.PatchAsync($"http://localhost:3000/todo/{idTodo}", todo);
+            }
+        }
+
+        [Command(Description="Set a todo item to uncompleted", Name = "undone")]
+        class UnDone
+        {
+            [Argument(0)]
+            public string idTodo { get; set; }
+
+            public async Task OnExecuteAsync()
+            {
+                var req = new {id = Convert.ToInt32(idTodo), status = false};
+                var client = new HttpClient();
+                var todo = new StringContent(JsonConvert.SerializeObject(req), Encoding.UTF8, "application/json");
+                var result = await client.PatchAsync($"http://localhost:3000/todo/{idTodo}", todo);
+            }
+        }
+
     }
 }
