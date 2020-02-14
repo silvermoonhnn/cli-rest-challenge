@@ -1,0 +1,14 @@
+/Users/gigaming/Downloads/Rest/bin/Debug/netcoreapp3.1/Rest
+/Users/gigaming/Downloads/Rest/bin/Debug/netcoreapp3.1/Rest.deps.json
+/Users/gigaming/Downloads/Rest/bin/Debug/netcoreapp3.1/Rest.runtimeconfig.json
+/Users/gigaming/Downloads/Rest/bin/Debug/netcoreapp3.1/Rest.runtimeconfig.dev.json
+/Users/gigaming/Downloads/Rest/bin/Debug/netcoreapp3.1/Rest.dll
+/Users/gigaming/Downloads/Rest/bin/Debug/netcoreapp3.1/Rest.pdb
+/Users/gigaming/Downloads/Rest/bin/Debug/netcoreapp3.1/McMaster.Extensions.CommandLineUtils.dll
+/Users/gigaming/Downloads/Rest/obj/Debug/netcoreapp3.1/Rest.csprojAssemblyReference.cache
+/Users/gigaming/Downloads/Rest/obj/Debug/netcoreapp3.1/Rest.AssemblyInfoInputs.cache
+/Users/gigaming/Downloads/Rest/obj/Debug/netcoreapp3.1/Rest.AssemblyInfo.cs
+/Users/gigaming/Downloads/Rest/obj/Debug/netcoreapp3.1/Rest.csproj.CopyComplete
+/Users/gigaming/Downloads/Rest/obj/Debug/netcoreapp3.1/Rest.dll
+/Users/gigaming/Downloads/Rest/obj/Debug/netcoreapp3.1/Rest.pdb
+/Users/gigaming/Downloads/Rest/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
